@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <title>Easy Example</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+  <div id="easy">
+    Loading the player...
+  </div>
+
+  <script type="text/javascript" src="jwplayer.js"></script>
+  <script type="text/javascript">
+    jwplayer.key = "iZaBV7cW7mBl61yIWCTK3IUeA1jqZjIUo28r0w==";
+
+    var playerInstance = jwplayer("easy");
+    playerInstance.setup({
+      file: "EasyVideo.mp4",
+      image: "EasyImage.jpg",
+      title: 'Easy Video',
+      description: 'Watch and be thanked afterwards!'
+    })
+    .onComplete(function() {
+      alert("thanks for watching!")
+    });
+
+  </script>
+</body>
+</html>

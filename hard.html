@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <title>Hard Example</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+  <div id="hard">
+    Loading the player...
+  </div>
+  <img id="hardImage" src="HardImage1.jpg">
+
+  <script type="text/javascript" src="jwplayer.js"></script>
+  <script type="text/javascript">
+    jwplayer.key = "iZaBV7cW7mBl61yIWCTK3IUeA1jqZjIUo28r0w==";
+
+    var playerInstance = jwplayer("hard");
+    playerInstance.setup({
+      file: "EasyVideo.mp4",
+      image: "EasyImage.jpg",
+      title: 'Hard Video',
+      description: 'Watch me swap some images!'
+    })
+    .onTime(function(event) {
+      if (event.position < 5) return;
+
+      playerInstance.play(false);
+      var img = document.getElementById("hardImage");
+      img.src = "HardImage2.jpg";
+    });
+
+  </script>
+</body>
+</html>

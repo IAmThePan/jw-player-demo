@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <title>Medium Example</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+  <style>
+    .button {
+      border: 1px solid grey;
+      margin-top: 10px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="medium">
+    Video will appear here
+  </div>
+  <br>
+  <a class="button" onClick="loadMedium()" />Load Second Video</a>
+  <a class="button" onClick="playVideo()" />Play Video</a>
+
+  <script type="text/javascript" src="jwplayer.js"></script>
+  <script type="text/javascript">
+    jwplayer.key = "iZaBV7cW7mBl61yIWCTK3IUeA1jqZjIUo28r0w==";
+
+    var playerInstance = jwplayer("medium");
+    playerInstance.setup({
+      file: "EasyVideo.mp4",
+      image: "EasyImage.jpg",
+      title: 'First Video',
+    });
+
+    function loadMedium() {
+      console.log('caleb');
+      playerInstance.load([{
+        file: "MediumVideo.mp4",
+        image: "MediumImage.jpg",
+        title: "Second Video"
+      }]);
+    }
+    function playVideo() {
+      playerInstance.play(true);
+    }
+
+  </script>
+</body>
+</html>
