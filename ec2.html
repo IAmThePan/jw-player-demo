@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <title>Extra Credit II Example</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+  <div id="ec2">
+    Loading the player...
+  </div>
+
+  <script type="text/javascript" src="jwplayer.js"></script>
+  <script type="text/javascript">
+    jwplayer.key = "iZaBV7cW7mBl61yIWCTK3IUeA1jqZjIUo28r0w==";
+
+    var playerInstance = jwplayer("ec2");
+    playerInstance.setup({
+      file: "EasyVideo.mp4",
+      image: "EasyImage.jpg",
+      advertising: {
+        client: 'vast',
+        schedule: {
+          adbreak1: {
+            offset: 10,
+            tag: 'http://www.adotube.com/php/services/player/OMLService.php?avpid=oRYYzvQ&platform_version=vast20&ad_type=linear&groupbypass=1&HTTP_REFERER=http://www.longtailvideo.com&video_identifier=longtailvideo.com,test'
+          }
+        }
+      }
+    })
+    .on("adImpression", function(event) {
+      alert("Impression was fired");
+    });
+
+  </script>
+</body>
+</html>
